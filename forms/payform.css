@@ -105,12 +105,10 @@ transition: 0.5s;
     }
     .payment::before{
         min-height:auto;
-     
     }
     .payment_form{
         min-height: auto;
         padding-bottom: 8%;
-        top:0;
     }
     .div_form1 img{
         width: 60%;
