@@ -35,7 +35,8 @@
                  <img src="../images/usdt-trc.png" alt="">
                  <h4 class="pt-2">USDT(TRC20) Address!</h4>
                 </div>
-                <div id="first" class="text-monospace font1">TLN9xALSH4UbuHdTBbHyUt5Pri7GkBYyvp 
+                <div id="first" class="text-monospace font1">
+                  <p id="copy_code" style="font-size: 0.9rem;">TLN9xALSH4UbuHdTBbHyUt5Pri7GkBYyvp </p>
                     <button id="first-button" class="btn btn-sm btn-light" onclick="copyText('first');" title="Copy Text">
                 Copy</button>
             </div>
@@ -103,7 +104,7 @@
   <script src="../js/form.js"></script>
   <script>
   function copyText(element) {
-  var $copyText = document.getElementById(element).innerText;
+  var $copyText = document.getElementById('copy_code').innerText;
   var button = document.getElementById(element + '-button');
   navigator.clipboard.writeText($copyText).then(function() {
     var originalText = button.innerText;
