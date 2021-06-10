@@ -1,0 +1,240 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/* ******** landing page------------------- */
+.navbar{
+    position:absolute;
+    top:0%;
+    width: 100%;    
+    background:#04000f;
+    z-index: 1;
+}
+.landing_page{
+    width: 100%;
+    height: 100vh;
+    background: url(../images/bitcoin_bg1.png);
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+.text_format{
+    position: absolute;
+    width: auto;
+    height: auto;
+    left: 45%;
+    top: 25%;
+    padding-left: 3%;
+}
+.text_format h1{
+    color: white;
+    font-size: 3rem;
+    font-weight: 900;
+}
+.text_format h1 span{
+    color: rgb(56, 102, 255);
+}
+.text_format p{
+    padding-top: 30px;
+    color: rgb(150, 150, 150);
+    font-weight: 800;
+    font-size: 1.1rem;
+    line-height: 2;
+}
+.text_format a{
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* **********************services_card************************************* */
+.services_card{
+    position: relative;
+    width: 100%;
+    height: auto;
+    /* background:#04000f; */
+    background:#080830;
+    padding: 5%;
+}
+.services_card .col-lg-4{
+    position:relative;
+    margin-top: 40px;
+}
+body .container .card {
+    position: relative;
+    min-width: 100%;
+    min-height: 65vh;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+      inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+      5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    transition: 0.5s;
+    /* background: rgba(0, 0, 0, 0.795); */
+    background: #04000f;
+  }
+  
+  body .container #one {
+    background: #2196f3;
+  }
+  body .container #two{  
+    background: #ff0055;
+  }
+  
+  body .container #three{
+    background: #00d889;
+  }
+  
+  body .container .card .box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: #2a2b2f;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  
+  body .container .card .box:hover {
+    transform: translateY(-50px);
+  }
+  
+  body .container .card .box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    clip-path: polygon(0 0,100% 0%, 100% 24%, 0 69%);
+    /* background: rgba(255, 255, 255, 0.03); */
+    background: rgb(56, 102, 255);
+  }
+  body .container .card .box img{
+      width: 30%;
+      height: 15vh;
+      border-radius: 50%;
+      position: absolute;
+      top: 2%;
+      right: 2%;
+      box-shadow: 0px 8px 10px black, 0px -3px 5px rgba(0, 0, 0, 0.712);
+  }
+  body .container .card .box .content {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  body .container .card .box .content h3 {
+    font-size: 1.8rem;
+    color: rgb(255, 255, 255);
+    z-index: 1;
+    margin-top: 80px;
+  }
+  
+  body .container .card .box .content p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+    z-index: 1;
+    transition: 0.5s;
+    margin-top: 20px;
+  }
+  
+  body .container .card .box .content a {
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(0, 0, 0, 0.829);
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    margin-top: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+  }
+  body .container .card .box .content a:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    background: #fff;
+    color: #000;
+  }
+  
+  /* ***********************footer**************************************** */
+ footer {
+        color: rgb(156, 156, 156);
+        background-color: #04000f;
+        position: relative;
+        padding:20px;
+ }
+ footer p, a {
+font-size: 1rem;
+}
+footer h6 {
+margin-bottom: 40px;
+position: relative;
+font-weight: 800;
+font-size: 1.5rem;
+}
+footer h6:after {
+position: absolute;
+content: "";
+background: grey;
+width: 12%;
+height: 1px;
+left: 0;
+bottom: -20px;
+}
+ .btn-footer {
+             color: rgb(150, 150, 150);
+            text-decoration: none;
+            border: 1px solid;
+            border-radius: 43px;
+            font-size: 13px;
+            padding: 7px 30px;
+            line-height: 47px;
+ }
+ .btn-footer:hover {
+            text-decoration: none;
+            border: 1px solid white;
+            color: white;     
+ }
+ .social_link i{
+   font-size: 1.5rem;
+   padding: 9px;
+   margin-left:10px;
+   color: rgb(151, 151, 151);
+   cursor: pointer;
+ }
+ .social_link i:hover{
+   color: white;
+   border: none;
+   transition: 0.5s;
+ }
+.newsletter input{
+  padding: 10px 20px;
+  width: auto;
+}
+.newsletter button{
+  font-size: 1.4rem;
+  color: white !important;
+  background: rgb(56, 102, 255);
+}
+.newsletter button:hover{
+  background: rgb(3, 52, 212);
+}
+.logo-part {
+border-right: 1px solid grey;
+height: 100%;
+}
+.copyright{
+  width: 100%;
+  margin-top: 2%;
+  text-align: center;
+  padding-top: 20px;
+}

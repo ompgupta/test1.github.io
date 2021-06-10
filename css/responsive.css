@@ -1,0 +1,96 @@
+@media (min-width:768px) and (max-width:1024px){
+    body{
+        font-size: 1rem;
+    }
+    /* ***************landing page********************* */
+    .landing_page{
+        width: auto;
+        height: 50vh;
+    }
+    .text_format{
+        width: auto;
+        height: auto;
+        left: 50%;
+        top: 15%;
+        padding-left: 3%;
+    }
+
+    /* ***************services card*************************************** */
+    body .container .card {
+        width: auto;
+      min-height: 38vh;
+      }
+      body .container .card .box img{
+        width: 35%;
+        height: auto;
+        top: 5%;
+        right: 5%;
+    }
+
+    /* *****************footer**************** */
+    .social_link i{
+       margin-left: 8px;
+      }
+      .newsletter input{
+        padding: 8px 0px;
+        min-width:50%;
+      }
+}
+
+/* ******************** for mobile device************************** */
+@media screen and (max-width:480px) {
+    *{
+         font-size: 1rem;
+             }
+     /* ***************landing page********************* */
+   
+     .landing_page{
+        width: auto;
+        height: 100vh;
+        background: url(../images/bitcoin_bg2.png);
+        background-size: cover;
+        overflow-x: hidden;
+    }
+    .text_format{
+        width:auto;
+        height: auto;
+        left:5%;
+        top: 25%;
+        padding-left: 3%;
+        z-index: 1;
+    }
+    .text_format h1 span{
+        font-size: 3rem;
+    }
+    .text_format p{
+        color: rgb(196, 196, 196);
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+    .text_format a{
+        margin-top: 20% !important; 
+    }
+    /* ***************services card*************************************** */
+    body .container .card {
+        min-width: 100%;
+       min-height: 68vh;
+      }
+      body .container .card .box img{
+        width: 35%;
+        height: auto;
+        top: 5%;
+        right: 5%;
+    }
+      /* *****************footer**************** */
+      .social_link i{
+        width: 13%;
+        height: auto;
+      }
+      footer .col-md-4{
+          margin-top: 15px;
+      }
+      .newsletter input{
+        padding: 10px 0px;
+       width: 75%;
+      }
+}

@@ -1,0 +1,177 @@
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar{
+    position: relative;
+    width: 100%;
+    height: auto;
+} 
+.payment{
+    position: relative;
+    width: auto;
+    min-height:85vh;
+    background:url('../images/bitcoin_bg1.png') no-repeat center;
+    background-size: cover;
+}
+.payment::before{
+    content: "";
+    width: auto;
+    min-height:85vh;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background: rgb(0, 0, 0);
+    opacity: .1;
+    z-index:0.5;
+}
+.payment_form{
+    position: absolute;
+    border: 1px solid rgb(0, 0, 0);
+    min-height: 70vh;
+    width: 50%;
+    right: 3%;
+    color: white;
+    top:10%;
+    border-radius: 30px;
+    background: #6a11cb;
+    background: linear-gradient(to right, rgba(106, 17, 203), rgb(0, 20, 196));
+    padding: 0 30px;
+    box-shadow: 5px 5px 10px rgb(0, 16, 105);
+    overflow-x: hidden;
+}
+.div_form1{
+    position: relative; 
+       top:4rem;
+       left: 0%; 
+    padding-left: 30px;
+}
+.div_form1 img{
+    width: 35%;
+    min-height: 12vh;
+    border-radius: 50%;
+    position: relative;
+}
+.div_form2{
+    position: relative;
+    border-left: 1px solid rgb(199, 199, 199);
+}
+.div_form2 input, select{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    width: 90%;
+    margin:20px 0;
+    outline: none;
+    color: white;
+}
+.div_form2 input::placeholder{
+    color: rgba(255, 255, 255, 0.616);
+}
+.div_form2 option{
+    color: black;
+}
+.div_form2 button{
+    font-size: 1.2rem;
+}
+.div_form2 button:hover{
+    background-color: rgb(0, 179, 0);
+    border: none;
+transition: 0.5s;
+}
+#error{
+    color: rgb(250, 6, 6); 
+    letter-spacing: 2px; 
+    display: none;
+}
+ /* *************QR code css start*********************** */
+ #coin{ 
+    width: 15%;
+    min-height: 10vh;
+}
+
+/* *******************for tablet and ipad*********************** */
+@media (min-width:768px) and (max-width:1025px){
+    *{
+        font-size: 1rem;
+        
+    }
+    .payment{
+        position: relative;
+        width: auto;
+        min-height:50vh;
+        background:url('../images/bitcoin_bg1.png') no-repeat center;
+        background-size: cover;
+    }
+    .payment::before{
+        min-height:auto;
+     
+    }
+    .payment_form{
+        min-height: auto;
+        padding-bottom: 8%;
+        top:0;
+    }
+    .div_form1 img{
+        width: 60%;
+        min-height: 4vh;
+    }
+    footer{
+        min-height: 42vh;
+        margin: 0;
+        padding: 0;
+    }
+    #coin{
+        min-height: 10vh;
+        min-width: 20%;
+    }
+}
+
+
+/* *******************for mobile device*********************** */
+@media screen and (max-width:480px) {
+    *{
+        font-size: 1rem;
+    }
+    .payment{
+        background:url('../images/bitcoin_bg2.png');
+        background-size: cover;
+        min-height: 100vh;
+    }
+    .payment_form{
+        min-width: 90%;
+        min-height: auto;
+        right: 0; left: 0;
+        color: white;
+    }
+    .div_form1{
+        position: relative; 
+           top:0rem;
+           left: 0%; 
+          text-align: center;
+    }
+    .div_form1 form:active{
+        min-height: 100vh;
+    }
+    .div_form2{
+        position: relative;
+        border-top: 1px solid rgb(199, 199, 199);
+        border-left: 0;
+        padding:10px 0 40px 0;
+    }
+    .div_form2 input, select{
+       min-width:50%;
+        margin:15px 0;
+        outline: none;
+        color: white;
+    }
+    .div_form2 button:hover{
+        background-color: rgb(0, 179, 0);
+        border: none;
+    transition: 0.5s;
+    }
+    #coin{
+        min-height: 10vh;
+        min-width: 25%;
+    }
+}
