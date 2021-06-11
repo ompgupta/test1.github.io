@@ -26,6 +26,7 @@
         top: 5%;
         right: 5%;
     }
+    
 
     /* *****************footer**************** */
     .social_link i{
@@ -36,8 +37,15 @@
         min-width:50%;
       }
 }
+/* ********** for extra card ipad in services ********************* */
+@media (min-width:768px) and (max-width:900px){
+    #last{
+        margin: 0 50%;
+    }
 
-/* ******************** for mobile device************************** */
+}
+
+/* ********************Media query for mobile device************************** */
 @media screen and (max-width:480px) {
     *{
          font-size: 1rem;

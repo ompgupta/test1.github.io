@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../forms/payform.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 
@@ -24,37 +25,24 @@
       <span class="navbar-toggler-icon"></span>
   </nav>
   </button>
-        <div class="container-fluid payment" id="particles-js">
-        <div class="container payment_form pt-5" data-aos="slide-up">
-          <div class="row" id="form_fill">
-            <div class="col-lg-5 col-md-5 div_form1">
-              <img src="../images/btc.png" alt="" srcset="">
-              <h1 class="pt-3">BNB</h1>
-              <p>Please fill the form</p>
+        <div class="container-fluid payment" id="particles-js" id="Qr_bg">
+          <div class="container pt-3 pb-3 text-center payment_form">
+            <div class="row" >
+               <div class="col-md">
+                 <div class="contain_val">
+                 <img src="../images/btc.png" alt="" id="coin"><br>
+                 <h2>Scan The QR-Code</h2>
+                 <img src="../images/btc_QR.png" alt="">
+                 <h2>VIDA Address!</h2>
+                </div>
+                <div id="first" class="text-monospace font1">
+                  <p id="copy_code" style="font-size: 0.9rem;"> bc1q8dtcjhjrf2an40y3hkw45s75jkl4w0ykndm2wn</p><button id="first-button" class="btn btn-sm btn-light" onclick="copyText('first');" title="Copy Text">
+                Copy</button>
             </div>
-            <div class="col-lg-7 col-md-7 div_form2">
-              <form action="javascript:nextFun()" method="POST">
-                <input type="text" placeholder="Enter your full name" id="name" required>
-                <input type="text" placeholder="What are you paying for" id="paying" required>
-               <input type="number" placeholder="Enter Amount" id="amount" required> <br>
-                <select name="crypto_coin" id="crypto_coin" class="text-light" required >
-                  <option value="#">Select Curreny</option>
-                  <option value="BTC">BTC</option>
-                  <option value="ETH">ETH</option>
-                  <option value="BNB">BNB</option>
-                  <option value="USDT-erc20">USDT(ERC20)</option>
-                  <option value="USDT-trc20">USDT(TRC20)</option>
-                   <option value="USDT-b20">USDT(BEP20)</option>
-                  <option value="BUSD">BUSD</option>
-                  <option value="PTT">PTT</option>
-                  <option value="VIDA">VIDA</option>
-                </select>
-                <p id="error"><i class="fas fa-times-circle mr-2"></i>Selected Wrong Curreny</p>
-                <button class="btn btn-light pl-4 pr-4 mt-0" type="submit">Submit</button></a>
-              </form>
+               </div>
+              </div>
             </div>
           </div>
-        </div>
         </div>
         <footer class="container-fluid bg-grey py-5">
           <div class="container">
@@ -98,42 +86,27 @@
 
   <script src="../js/jquery.js"></script>
   <script src="../js/bootstrap.min.js"></script>
-  <script src="https://smtpjs.com/v3/smtp.js">
-  </script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
   </script>
   <script src="../particles/particles.min.js"></script>
   <script src="../particles/app.js"></script>
+  <script src="../js/form.js"></script>
   <script>
-function nextFun(){
-   const Crypto_coin = document.getElementById('crypto_coin');
-   const choice_val = crypto_coin.options[Crypto_coin.selectedIndex].value;
-   const Name = document.getElementById('name').value;
-    const pay = document.getElementById('paying').value;
-    const Amount = document.getElementById('amount').value;
-    const body = 'Name: '+Name +'<br>Paying For: '+pay+ '<br>Amount: '+Amount+ '<br>Selected Currency: '+choice_val;
-if(choice_val == 'BNB'){
-Email.send({
-    SecureToken : "12e68194-963d-47ff-843d-117a94a80984",
-    To : 'noor.alam.619@gmail.com',
-    From : 'newuser@gmail.com',
-    Subject :'New Payment Information' ,
-    Body : body
-}).then(message => {
-    if (message =='OK') {
-      window.location.replace('../Qr_code/bnb_qr.html');
-    }
-     else {
-      document.getElementById('error').style.display= 'block';
-      document.getElementById('error').innerText = "Something Wrong!";
-    }
- });
-}
-else{
-  document.getElementById('error').style.display= 'block';
-}
+  function copyText(element) {
+  var $copyText = document.getElementById('copy_code').innerText;
+  var button = document.getElementById(element + '-button');
+  navigator.clipboard.writeText($copyText).then(function() {
+    var originalText = button.innerText;
+    button.innerText = 'Copied!';
+    setTimeout(function(){
+      button.innerText = originalText;
+      }, 750);
+  }, function() {
+    button.style.cssText = "background-color: var(--red);";
+    button.innerText = 'Error';
+  });
 }
  </script>
 </body>

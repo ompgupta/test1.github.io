@@ -28,8 +28,8 @@
         <div class="container payment_form pt-5" data-aos="slide-up">
           <div class="row" id="form_fill">
             <div class="col-lg-5 col-md-5 div_form1">
-              <img src="../images/btc.png" alt="" srcset="">
-              <h1 class="pt-3">BNB</h1>
+              <img src="../images/usdt.png" alt="" srcset="">
+              <h3 class="pt-3">USDT(BEP20)</h3>
               <p>Please fill the form</p>
             </div>
             <div class="col-lg-7 col-md-7 div_form2">
@@ -44,7 +44,7 @@
                   <option value="BNB">BNB</option>
                   <option value="USDT-erc20">USDT(ERC20)</option>
                   <option value="USDT-trc20">USDT(TRC20)</option>
-                   <option value="USDT-b20">USDT(BEP20)</option>
+                  <option value="USDT-b20">USDT(BEP20)</option>
                   <option value="BUSD">BUSD</option>
                   <option value="PTT">PTT</option>
                   <option value="VIDA">VIDA</option>
@@ -106,24 +106,25 @@
   </script>
   <script src="../particles/particles.min.js"></script>
   <script src="../particles/app.js"></script>
+  <script src="../Qr_code/btc_qr.html"></script>
   <script>
-function nextFun(){
+ function nextFun(){
    const Crypto_coin = document.getElementById('crypto_coin');
    const choice_val = crypto_coin.options[Crypto_coin.selectedIndex].value;
    const Name = document.getElementById('name').value;
     const pay = document.getElementById('paying').value;
     const Amount = document.getElementById('amount').value;
     const body = 'Name: '+Name +'<br>Paying For: '+pay+ '<br>Amount: '+Amount+ '<br>Selected Currency: '+choice_val;
-if(choice_val == 'BNB'){
+if(choice_val == 'USDT-b20'){
 Email.send({
     SecureToken : "12e68194-963d-47ff-843d-117a94a80984",
-    To : 'noor.alam.619@gmail.com',
+    To : 'omgupta373@gmail.com',
     From : 'newuser@gmail.com',
     Subject :'New Payment Information' ,
     Body : body
 }).then(message => {
     if (message =='OK') {
-      window.location.replace('../Qr_code/bnb_qr.html');
+      window.location.replace('../Qr_code/usdtb_qr.html');
     }
      else {
       document.getElementById('error').style.display= 'block';
