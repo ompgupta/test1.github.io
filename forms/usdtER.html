@@ -5,14 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>MZN RAHI</title>
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/all.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/responsive.css">
   <link rel="stylesheet" href="../forms/payform.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
@@ -26,7 +25,7 @@
   </nav>
   </button>
         <div class="container-fluid payment" id="particles-js">
-        <div class="container payment_form pt-5">
+        <div class="container payment_form pt-5" data-aos="slide-up">
           <div class="row" id="form_fill">
             <div class="col-lg-5 col-md-5 div_form1">
               <img src="../images/usdt.png" alt="" srcset="">
@@ -35,9 +34,9 @@
             </div>
             <div class="col-lg-7 col-md-7 div_form2">
               <form action="javascript:nextFun()" method="POST">
-                <input type="text" placeholder="Enter your full name" required>
-                <input type="text" placeholder="What are you paying for" required>
-               <input type="number" placeholder="Enter Amount" required> <br>
+                <input type="text" placeholder="Enter your full name" id="name" required>
+                <input type="text" placeholder="What are you paying for" id="paying" required>
+               <input type="number" placeholder="Enter Amount" id="amount" required> <br>
                 <select name="crypto_coin" id="crypto_coin" class="text-light" required >
                   <option value="#">Select Curreny</option>
                   <option value="BTC">BTC</option>
@@ -47,7 +46,7 @@
                   <option value="USDT-trc20">USDT(TRC20)</option>
                   <option value="BUSD">BUSD</option>
                 </select>
-                <p id="error">Selected Wrong Curreny</p>
+                <p id="error"><i class="fas fa-times-circle mr-2"></i>Selected Wrong Curreny</p>
                 <button class="btn btn-light pl-4 pr-4 mt-0" type="submit">Submit</button></a>
               </form>
             </div>
@@ -79,15 +78,7 @@
                   <i class="fab fa-linkedin-in"></i>
                   <i class="fab fa-instagram"></i>
                 </div>
-                <div class="newsletter mt-3">
-                <h6> Newsletter</h6>
-                <form class="form-footer my-3">
-                  <input type="text" placeholder="Email...." name="search">
-                  <button class="btn"><i class="fab fa-telegram-plane"></i></button>
-                </form>
-                <p>That's technology limitation of LCD monitors</p>
-              </div>
-            </div>
+               </div>
           </div>
           </div>
             <div class="copyright container-fluid">
@@ -104,24 +95,43 @@
 
   <script src="../js/jquery.js"></script>
   <script src="../js/bootstrap.min.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js">
+  </script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
   </script>
   <script src="../particles/particles.min.js"></script>
   <script src="../particles/app.js"></script>
-  <script src="../Qr_code/btc_qr.html"></script>
   <script>
  function nextFun(){
    const Crypto_coin = document.getElementById('crypto_coin');
    const choice_val = crypto_coin.options[Crypto_coin.selectedIndex].value;
-   if(choice_val == 'USDT-erc20'){
-  window.location.replace('../Qr_code/usdtEr_qr.html');
-   }
-   else{
-    document.getElementById('error').style.display= 'block';
-   }
- }
+   const Name = document.getElementById('name').value;
+    const pay = document.getElementById('paying').value;
+    const Amount = document.getElementById('amount').value;
+    const body = 'Name: '+Name +'<br>Paying For: '+pay+ '<br>Amount: '+Amount+ '<br>Selected Currency: '+choice_val;
+if(choice_val == 'USDT-erc20'){
+Email.send({
+    SecureToken : "12e68194-963d-47ff-843d-117a94a80984",
+    To : 'noor.alam.619@gmail.com',
+    From : 'newuser@gmail.com',
+    Subject :'New Payment Information' ,
+    Body : body
+}).then(message => {
+    if (message =='OK') {
+      window.location.replace('../Qr_code/usdtEr_qr.html');
+    }
+     else {
+      document.getElementById('error').style.display= 'block';
+      document.getElementById('error').innerText = "Something Wrong!";
+    }
+ });
+}
+else{
+  document.getElementById('error').style.display= 'block';
+}
+}
  </script>
 </body>
 </body>
